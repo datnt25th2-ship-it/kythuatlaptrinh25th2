@@ -12,21 +12,27 @@ int main()
             cout << "2. Add an account " << endl;
             cout << "3. Update an account" << endl;
             cout << "4. delete an account" << endl;
-            cout << "5. export to file" << endl;
-            cout << "6. import to file" << endl;
-            cout << "0. Quit" << endl;
+            cout << "5. Search for aq account " << endl;
+            cout << "6. Export to file" << endl;
+            cout << "7. Import from file" << endl;
+            cout << "0. Exit" << endl;
+            cout << "-------------------------------------" << endl;
+            cout << "Enter your choice: ";
+            int choice;
+            cin >> choice;
 
-            cin >> cmd;
-
-            switch (cmd) {
+            switch (choice) {
             case 1: {
+                cout << "Show all accounts" << endl;
+                account.Show();
                 break;
             }
             case 2: {
                 cout << "Add new account" << endl;
-                Book book; // Gi? s? struct/class c?a b?n tên là Book
-                cin >> book;
-                books.push_back(book);
+                Account a;
+                cin >> a;
+                account.AddFirst(a);
+
                 break;
             }
 

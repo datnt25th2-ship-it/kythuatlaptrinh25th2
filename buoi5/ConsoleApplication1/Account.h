@@ -14,6 +14,21 @@ struct Account {
         os << "\t Description: " << a.description << endl;
         return os;
     }
+    friend istream& operator>>(istream& is, Account& a) {
+        cout << "Enter account information: " << endl;
+        cout << "\t Enter account ID: ";
+        is >> a.id;
+        cout << "\t Enter link: ";
+        is.ignore();
+        getline(is, a.link);
+        cout << "\t Enter user name: ";
+        getline(is, a.user);
+        cout << "\t Enter password: ";
+        getline(is, a.password);
+        cout << "\t Enter description: ";
+        getline(is, a.description);
+        return is;
+    }
 };
-
 #endif
+
